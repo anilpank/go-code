@@ -13,6 +13,9 @@ func main() {
 	weekday()
 	oddEvenDay()
 	forLoop()
+	countToHundredByTens()
+	continueExample()
+	breakStatement()
 }
 
 func ifcond() {
@@ -103,5 +106,29 @@ func oddEvenDay() {
 func forLoop() {
 	for i := 0; i < 5; i++ {
 		fmt.Println("Iteration:", i)
+	}
+}
+
+func countToHundredByTens() {
+	for i := 0; i <= 100; i += 10 {
+		fmt.Println("Count ", i)
+	}
+}
+
+func continueExample() {
+	for i := 0; i < 5; i++ {
+		if i == 2 {
+			continue
+		}
+		fmt.Println("Iteration:", i)
+	}
+}
+
+func breakStatement() {
+	for i := 0; i < 5; i++ {
+		if i == 2 {
+			break
+		}
+		fmt.Println("breakStatement:", i)
 	}
 }
