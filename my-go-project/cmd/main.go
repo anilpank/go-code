@@ -16,6 +16,8 @@ func main() {
 	countToHundredByTens()
 	continueExample()
 	breakStatement()
+	rangeStatement()
+	useLenToIterate()
 }
 
 func ifcond() {
@@ -130,5 +132,28 @@ func breakStatement() {
 			break
 		}
 		fmt.Println("breakStatement:", i)
+	}
+}
+
+func rangeStatement() {
+	numbers := []int{1, 2, 3, 4, 5}
+	for i, v := range numbers {
+		fmt.Println("Index:", i, "Value:", v)
+	}
+
+	marks := []int{85, 90, 78, 92, 88}
+	for i, v := range marks {
+		fmt.Println("Index:", i, "Value:", v)
+	}
+
+	for _, v := range marks {
+		fmt.Println("Value:", v)
+	}
+}
+
+func useLenToIterate() {
+	var fruits = []string{"Apple", "Banana", "Cherry"}
+	for i := 0; i < len(fruits); i++ {
+		fmt.Println("Index:", i, "Value:", fruits[i])
 	}
 }
