@@ -23,6 +23,10 @@ func main() {
 	myFunc()
 	fmt.Println("Sum of 5 and 10 is:", add(5, 10))
 	familyName("Smith", 41)
+	fmt.Println("Factorial of 5 is:", factorial(5))
+	fmt.Println("Subtracting 10 from 20 gives:", subtract(20, 10))
+	firstName, lastName := returnName()
+	fmt.Println("First Name:", firstName, "Last Name:", lastName)
 }
 
 func ifcond() {
@@ -193,4 +197,23 @@ func add(a int, b int) int {
 
 func familyName(name string, age int) {
 	fmt.Println("Hello Family Name:", name, "Age:", age)
+}
+
+func factorial(n int) int {
+	if n == 0 {
+		return 1
+	}
+	return n * factorial(n-1)
+}
+
+// named return values
+func subtract(a int, b int) (diff int) {
+	diff = a - b
+	return diff
+}
+
+func returnName() (firstName string, lastName string) {
+	firstName = "Alice"
+	lastName = "Wonderland"
+	return
 }
