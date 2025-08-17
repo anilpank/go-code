@@ -18,6 +18,7 @@ func main() {
 	breakStatement()
 	rangeStatement()
 	useLenToIterate()
+	printiIFlessThan()
 }
 
 func ifcond() {
@@ -149,11 +150,27 @@ func rangeStatement() {
 	for _, v := range marks {
 		fmt.Println("Value:", v)
 	}
+
+	var person = map[string]string{"name": "Alice", "city": "Wonderland"}
+	for key, value := range person {
+		fmt.Println("Key:", key, "Value:", value)
+	}
+
+	//only print keys
+	for key := range marks {
+		fmt.Println("Key:", key)
+	}
 }
 
 func useLenToIterate() {
 	var fruits = []string{"Apple", "Banana", "Cherry"}
 	for i := 0; i < len(fruits); i++ {
 		fmt.Println("Index:", i, "Value:", fruits[i])
+	}
+}
+
+func printiIFlessThan() {
+	for i := 0; i < 6; i++ {
+		fmt.Println("i is less than 6:", i)
 	}
 }
