@@ -19,6 +19,10 @@ func main() {
 	rangeStatement()
 	useLenToIterate()
 	printiIFlessThan()
+	callMe()
+	myFunc()
+	fmt.Println("Sum of 5 and 10 is:", add(5, 10))
+	familyName("Smith", 41)
 }
 
 func ifcond() {
@@ -173,4 +177,20 @@ func printiIFlessThan() {
 	for i := 0; i < 6; i++ {
 		fmt.Println("i is less than 6:", i)
 	}
+}
+
+func callMe() {
+	fmt.Println("Hello from callMe!")
+}
+
+func myFunc() {
+	fmt.Println("Hello from myFunc!")
+}
+
+func add(a int, b int) int {
+	return a + b
+}
+
+func familyName(name string, age int) {
+	fmt.Println("Hello Family Name:", name, "Age:", age)
 }
