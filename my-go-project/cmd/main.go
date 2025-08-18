@@ -27,6 +27,12 @@ func main() {
 	fmt.Println("Subtracting 10 from 20 gives:", subtract(20, 10))
 	firstName, lastName := returnName()
 	fmt.Println("First Name:", firstName, "Last Name:", lastName)
+	structExample()
+	var per1 Person
+	per1.firstName = "Anil"
+	per1.lastName = "Kumar"
+	per1.age = 40
+	passStruct(per1)
 }
 
 func ifcond() {
@@ -216,4 +222,23 @@ func returnName() (firstName string, lastName string) {
 	firstName = "Alice"
 	lastName = "Wonderland"
 	return
+}
+
+type Person struct {
+	firstName string
+	lastName  string
+	age       int
+}
+
+func structExample() {
+	var per1 Person
+	per1.firstName = "John"
+	per1.lastName = "Doe"
+	per1.age = 30
+
+	fmt.Println("Person:", per1.firstName, per1.lastName, "Age:", per1.age)
+}
+
+func passStruct(p Person) {
+	fmt.Println("Person:", p.firstName, p.lastName, "Age:", p.age)
 }
