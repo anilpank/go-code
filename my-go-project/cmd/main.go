@@ -33,6 +33,11 @@ func main() {
 	per1.lastName = "Kumar"
 	per1.age = 40
 	passStruct(per1)
+	mapExample()
+	housePrices()
+	createMapInTwoWays()
+	addAndDeleteElements()
+	checkForElementInMap()
 }
 
 func ifcond() {
@@ -241,4 +246,62 @@ func structExample() {
 
 func passStruct(p Person) {
 	fmt.Println("Person:", p.firstName, p.lastName, "Age:", p.age)
+}
+
+func mapExample() {
+	var marks = map[string]int{
+		"Math":    90,
+		"Science": 85,
+		"English": 88,
+	}
+	for subject, mark := range marks {
+		fmt.Println("Subject:", subject, "Mark:", mark)
+	}
+}
+
+func housePrices() {
+	var housePrices = make(map[string]int)
+	housePrices["House A"] = 300000
+	housePrices["House B"] = 450000
+	housePrices["House C"] = 500000
+
+	for house, price := range housePrices {
+		fmt.Println("House:", house, "Price:", price)
+	}
+}
+
+func createMapInTwoWays() {
+	var myMap = make(map[string]int)
+	fmt.Println("ismyMap nil", myMap == nil)
+
+	var myMap2 map[string]int
+	fmt.Println("ismyMap2 nil", myMap2 == nil)
+
+}
+
+func addAndDeleteElements() {
+	var myMap = make(map[string]int)
+	myMap["A"] = 1
+	myMap["B"] = 2
+	myMap["C"] = 3
+
+	fmt.Println("Before deletion:", myMap)
+
+	delete(myMap, "B")
+	fmt.Println("After deletion:", myMap)
+
+	myMap["D"] = 4
+	fmt.Println("After addition:", myMap)
+}
+
+func checkForElementInMap() {
+	var myMap = make(map[string]int)
+	myMap["A"] = 1
+	myMap["B"] = 2
+	myMap["C"] = 3
+
+	value, exists := myMap["B"]
+
+	fmt.Println("Value for key 'B':", value)
+	fmt.Println("Key 'B' exists:", exists)
 }
