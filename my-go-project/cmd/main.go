@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func main() {
@@ -47,6 +48,15 @@ func main() {
 
 	rect.changeRectangleDimensions(15, 10)
 	fmt.Println("Area of rectangle after change:", rect.area())
+
+	v := Vertex{3, 4}
+	Scale(v, 10)
+	fmt.Println("Scaled Vertex:", v)
+	v.AddScale(5)
+	fmt.Println("Vertex after AddScale:", v)
+	pv := &v
+	pv.AddScale(15)
+	fmt.Println("Vertex after pv.AddScale:", v)
 
 }
 
@@ -337,4 +347,23 @@ func (r Rectangle) changeRectangleDimensionsLocal(length int, width int) {
 func (r *Rectangle) changeRectangleDimensions(length int, width int) {
 	r.length = length
 	r.width = width
+}
+
+type Vertex struct {
+	X float64
+	Y float64
+}
+
+func Abs(v Vertex) float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+func Scale(v Vertex, f float64) {
+	v.X *= f
+	v.Y *= f
+}
+
+func (v *Vertex) AddScale(f float64) {
+	v.X *= f
+	v.Y *= f
 }
