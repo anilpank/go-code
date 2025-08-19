@@ -41,6 +41,13 @@ func main() {
 
 	rect := Rectangle{length: 10, width: 5}
 	fmt.Println("Area of rectangle:", rect.area())
+
+	rect.changeRectangleDimensionsLocal(20, 15)
+	fmt.Println("Area of rectangle after local change:", rect.area())
+
+	rect.changeRectangleDimensions(15, 10)
+	fmt.Println("Area of rectangle after change:", rect.area())
+
 }
 
 func ifcond() {
@@ -316,4 +323,18 @@ type Rectangle struct {
 
 func (r Rectangle) area() int {
 	return r.length * r.width
+}
+
+func (r Rectangle) changeRectangleDimensionsLocal(length int, width int) {
+	r.length = length
+	r.width = width
+}
+
+/**
+* Change the dimensions of the rectangle (pointer receiver)
+* This is a pointer receiver method example
+ */
+func (r *Rectangle) changeRectangleDimensions(length int, width int) {
+	r.length = length
+	r.width = width
 }
