@@ -38,6 +38,9 @@ func main() {
 	createMapInTwoWays()
 	addAndDeleteElements()
 	checkForElementInMap()
+
+	rect := Rectangle{length: 10, width: 5}
+	fmt.Println("Area of rectangle:", rect.area())
 }
 
 func ifcond() {
@@ -304,4 +307,13 @@ func checkForElementInMap() {
 
 	fmt.Println("Value for key 'B':", value)
 	fmt.Println("Key 'B' exists:", exists)
+}
+
+type Rectangle struct {
+	length int
+	width  int
+}
+
+func (r Rectangle) area() int {
+	return r.length * r.width
 }
