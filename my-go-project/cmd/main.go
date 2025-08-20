@@ -58,6 +58,10 @@ func main() {
 	pv.AddScale(15)
 	fmt.Println("Vertex after pv.AddScale:", v)
 
+	// Using the interface
+	var g geometry
+	g = rectangle{20, 10}
+	measure(g)
 }
 
 func ifcond() {
@@ -331,6 +335,10 @@ type Rectangle struct {
 	width  int
 }
 
+type Circle struct {
+	radius float64
+}
+
 func (r Rectangle) area() int {
 	return r.length * r.width
 }
@@ -366,4 +374,31 @@ func Scale(v Vertex, f float64) {
 func (v *Vertex) AddScale(f float64) {
 	v.X *= f
 	v.Y *= f
+}
+
+type Abser interface {
+	Abs() float64
+}
+
+type geometry interface {
+	area() float64
+	perimeter() float64
+}
+
+type rectangle struct {
+	width  float64
+	height float64
+}
+
+func (r rectangle) area() float64 {
+	return r.width * r.height
+}
+
+func (r rectangle) perimeter() float64 {
+	return 2 * (r.width + r.height)
+}
+
+func measure(g geometry) {
+	fmt.Println("Area:", g.area())
+	fmt.Println("Perimeter:", g.perimeter())
 }
