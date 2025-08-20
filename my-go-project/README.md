@@ -48,3 +48,11 @@ This project includes utility functions in `pkg/utils.go` that can be used for b
 ## Contributing
 
 Feel free to submit issues or pull requests if you would like to contribute to this project.
+
+## Go Important Learning Websites
+
+Go By Example
+https://gobyexample.com/
+
+A Tour of Go
+https://go.dev/tour/methods/9
